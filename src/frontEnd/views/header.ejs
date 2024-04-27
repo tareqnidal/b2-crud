@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <img src="/images/logo.webp" alt="Logo">
+
+    <div id="navbar" class="navbar">
+        <ul><a href="/"><img src="/images/home.jpg" alt="Home"></a></ul>
+        <ul><a href="/snippet"><img src="/images/snippet.webp" alt="View Snippets"></a></ul>
+        <% if (user) { %>
+        <ul><a href="/logout"><img src="/images/logut.webp" alt="Logout"></a></ul>
+        <% } else { %>
+        <ul><a href="/login"><img src="/images/login.webp" alt="Login"></a></ul>
+        <ul><a href="/register"><img src="/images/register.webp" alt="Register"></a></ul>
+        <% } %>
+
+        <% if (user) { %>
+        <button class="create-link" onclick="location.href='/snippet/create'">
+            <div class="sign"> + </div>
+            <div class="text"> Create </div>
+        </button>
+        <% } %>
+    </div>
+
+</header>
+
+<%- include('flashMessage') -%>
+</html>

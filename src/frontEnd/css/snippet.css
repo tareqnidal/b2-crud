@@ -1,0 +1,249 @@
+.snippets-page-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.snippets-page {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  place-content: center;
+}
+
+
+.snippets-page-head p{
+  font-size: xx-large;
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: #ffffff;
+  background-color: #f44336;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30%;
+  margin-left: 5%;
+}
+
+
+.single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.snippet {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border-radius: 10px;
+  max-width: 70%;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.snippet-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.snippet-top p{
+  font-size: 20px;
+}
+
+.snippet-title {
+  padding: 10px;
+}
+
+.edit-delete-btns {
+  display: flex;
+}
+
+.edit-link,
+.delete-link {
+  margin-left: 10px;
+}
+
+.snippet-info {
+  width: 400px;
+  height: 254px;
+  height: fit-content;
+  background: #f8f7f7;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 3px 1px #00000088;
+  cursor: pointer;
+  display: block;
+  margin-left: 10px;
+}
+
+.snippet-description {
+  padding: 10px;
+}
+
+.code {
+  color: #ccc;
+  overflow-x: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  width: 600px;
+  height: 300px;
+  background: #15001f;
+  border: 1px solid #c042ff;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.code::-webkit-scrollbar {
+  display: none;
+}
+
+h3,
+h4
+{
+  margin: 0;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.delete-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-link:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-link:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%), rotate(360deg);
+  ;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+.delete-link::before {
+  display: none;
+  content: "Delete";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-link:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+.edit-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.edit-svgIcon {
+  width: 17px;
+  transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+  fill: white;
+}
+
+.edit-link:hover {
+  width: 120px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.edit-link:hover .edit-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%), rotate(360deg);
+  ;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+.edit-link::before {
+  display: none;
+  content: "Edit";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.edit-link:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<%- include('head') -%>
+<%- include('header') -%>
+
+<div class="register-container">
+    <p class="title">Register </p>
+    <p class="message">Signup now and get full access to our app. </p>
+
+    <form id="register" action="/register" class="register" method="post">
+
+        <div class="form-group">
+            <label for="first-name"></label>
+            <input type="text" class="form-control" id="first-name" name="firstName" placeholder="First name"
+                value="<%= info && info.firstName ? info.firstName : '' %>">
+        </div>
+
+        <div class="form-group">
+            <label for="last-name"></label>
+            <input type="text" class="form-control" id="last-name" name="lastName" placeholder="Last name"
+                value="<%= info && info.lastName ? info.lastName : '' %>">
+        </div>
+
+        <div class="form-group">
+            <label for="username"></label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="username"
+                value="<% info && info.username ? info.username : '' %>">
+        </div>
+
+        <div class="form-group">
+            <label for="email"></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                value="<%= info && info.email ? info.email : '' %>">
+        </div>
+
+        <div class="form-group">
+            <label for="password"></label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="register-btn">Register</button>
+        <p class="signin">Already have an acount ? <a href="/login">Signin</a> </p>
+
+    </form>
+
+</div>
+</html>

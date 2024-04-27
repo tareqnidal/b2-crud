@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<%- include('head') %>
+<%- include('header') %>
+
+
+
+    <div id="home" class="home">
+        <% if (user) { %>
+        <p>Welcome, <%= user.username%></p>
+        <% } %>
+        <h1> B2 assignment code snippet </h1>
+        <p>In this assignment, I created a web application for persistent handling of programming code snippets
+            using an application framework and an object data modeling library for MongoDB.</p>
+    </div>
+    <img src="/images/homeImg.webp" alt="Home Image">
+
+</html>

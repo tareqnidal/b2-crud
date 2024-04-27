@@ -1,0 +1,148 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: auto;
+  background-color: #0e0d0d;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 5%;
+}
+
+.title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.signin {
+  text-align: center;
+}
+
+.register-container .message,
+.register-container .signin {
+  color: rgba(245, 239, 239, 0.822);
+  font-size: 25px;
+}
+
+.signin a {
+  color: rgb(246, 247, 252);
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  color: #333;
+  font-weight: 600;
+}
+
+.form-control label .input+span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form-control label .input:placeholder-shown+span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form-control label .input:focus+span,
+.form-control label .input:valid+span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form-control label .input:valid+span {
+  color: green;
+}
+
+.form-control {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid;
+  font-size: 16px;
+}
+
+.register-btn {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10%;
+  width: 300px;
+  margin-top: 20px;
+}
+
+.register-btn:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+.form-control:focus {
+  border-color: royalblue;
+}
+
+.form-group .form-control:valid {
+  border-color: green;
+}
+
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,10 @@
+.flash {
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: #ffffff;
+  background-color: #f44336;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}

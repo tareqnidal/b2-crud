@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<%- include('head') -%>
+<%- include('header') -%>
+
+  <div class="form-container">
+    <form id="create-snippet-form" action="/snippet/create" method="POST">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title"
+          value="<%= snippets && snippets[0].title ? snippets[0].title : '' %>">
+        <label for="language">Language:</label>
+        <input type="text" name="language" id="language"
+          value="<%= snippets && snippets[0].language ? snippets[0].language : '' %>">
+        <label for="snippet">Snippet:</label>
+        <textarea class="snippet" name="snippet"
+          id="snippet"><%= snippets && snippets[0].snippet ? snippets[0].snippet : '' %></textarea>
+        <label for="description">Description:</label>
+        <textarea name="description"
+          id="description"><%= snippets && snippets[0].description ? snippets[0].description : '' %></textarea>
+      </div>
+      <label class="isPublic" for="private">public:</label>
+      <div id="button-3" class="button r">
+        <input class="checkbox" type="checkbox" name="private" id="private"
+          <%= snippets && snippets[0] && !snippets[0].isPublic ? 'checked' : '' %>>
+        <div class="knobs"></div>
+        <div class="layer"></div>
+      </div>
+      <% if (snippets && snippets.length >= 1) { %>
+      <button class="snippet-save" onclick="event.preventDefault(); handleUpdate('<%=snippets[0].id%>')">Update</button>
+      <% } else { %>
+      <button class="snippet-save" type="submit">Create</button>
+      <% } %>
+    </form>
+  </div>
+  <script>
+    async function handleUpdate(snippetId) {
+      const form = document.getElementById('create-snippet-form');
+      const formData = new FormData(form);
+      const jsonData = Object.fromEntries(formData.entries());
+      jsonData.private = formData.get('private') === 'on';
+
+      const url = `/snippet/${snippetId}/update`;
+      const response = await fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(jsonData),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+
+      if (response.ok) {
+        document.location.replace('/snippet/' + snippetId);
+      } else {
+        alert(response.statusText);
+      }
+    }
+
+  </script>
+</html>
